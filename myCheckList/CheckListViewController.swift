@@ -24,15 +24,16 @@ class CheckListViewController: UITableViewController {
 
     override func tableView(
       _ tableView: UITableView,
-      cellForRowAt indexPath: IndexPath
-    ) -> UITableViewCell {
+      cellForRowAt indexPath: IndexPath // метод вызывается для каждой строки
+    ) -> UITableViewCell {              //  в каждой строке есть лейбл с тегом
       let cell = tableView.dequeueReusableCell(
         withIdentifier: "ChecklistItem",
         for: indexPath)
         
         // Add the following code
-          let label = cell.viewWithTag(1000) as! UILabel
-
+          let label = cell.viewWithTag(1000) as! UILabel//поиск конкретного вью с тегом и возвр ссылку на элемент
+        print(indexPath.section)
+        
           if indexPath.row == 0 {
             label.text = "Walk the dog"
           } else if indexPath.row == 1 {
