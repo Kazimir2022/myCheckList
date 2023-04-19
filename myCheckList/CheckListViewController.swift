@@ -68,10 +68,13 @@ class CheckListViewController: UITableViewController {
     ) {
           if let cell = tableView.cellForRow(at: indexPath) {
             var isChecked = false
-
+                // во время первого нажатия во внешней переменной изменяем зн. на true
+              // срабатывает второй оператор if(I) который повторно устанвливает галочку
+            // при втором нажатии внешняя переменной изменяем зн. на false
+              // срабатывает второй оператор if(II)
             if indexPath.row == 0 {
-               row0checked.toggle()//true
-               isChecked = row0checked//true
+               row0checked.toggle()//
+               isChecked = row0checked//
              } else if indexPath.row == 1 {
                row1checked.toggle()
                 isChecked = row1checked
@@ -86,9 +89,9 @@ class CheckListViewController: UITableViewController {
                         isChecked = row4checked
                       }
                       if isChecked {
-                        cell.accessoryType = .checkmark
+                        cell.accessoryType = .checkmark//I
                       } else {
-                        cell.accessoryType = .none
+                        cell.accessoryType = .none//II
                       }
                     }
                    tableView.deselectRow(at: indexPath, animated: true)
