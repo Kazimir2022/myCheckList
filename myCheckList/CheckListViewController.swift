@@ -32,7 +32,6 @@ class CheckListViewController: UITableViewController {
         
         // Add the following code
           let label = cell.viewWithTag(1000) as! UILabel//поиск конкретного вью с тегом и возвр ссылку на элемент
-        print(indexPath.section)
         
         if indexPath.row % 5 == 0 {
             label.text = "Walk the dog"
@@ -56,7 +55,14 @@ class CheckListViewController: UITableViewController {
       _ tableView: UITableView,
       didSelectRowAt indexPath: IndexPath
     ) {
-      tableView.deselectRow(at: indexPath, animated: true)
+        if let cell = tableView.cellForRow(at: indexPath) {
+            if cell.accessoryType == .none {
+              cell.accessoryType = .checkmark
+            } else {
+              cell.accessoryType = .none
+            }
+          }
+      tableView.deselectRow(at: indexPath, animated: false)
     }
     
 }
