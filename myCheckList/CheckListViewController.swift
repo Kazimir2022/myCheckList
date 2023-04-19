@@ -8,7 +8,13 @@
 import UIKit
 
 class CheckListViewController: UITableViewController {
+    let row0text = "1Walk the dog"
+      let row1text = "2Brush teeth"
+      let row2text = "3Learn iOS development"
+      let row3text = "4Soccer practice"
+      let row4text = "5Eat ice cream"
 
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -19,7 +25,7 @@ class CheckListViewController: UITableViewController {
       _ tableView: UITableView,
       numberOfRowsInSection section: Int
     ) -> Int {
-      return 100
+      return 5
     }
 
     override func tableView(
@@ -33,16 +39,16 @@ class CheckListViewController: UITableViewController {
         // Add the following code
           let label = cell.viewWithTag(1000) as! UILabel//поиск конкретного вью с тегом и возвр ссылку на элемент
         
-        if indexPath.row % 5 == 0 {
-            label.text = "Walk the dog"
-          } else if indexPath.row % 5 == 1 {
-            label.text = "Brush my teeth"
-          } else if indexPath.row % 5 == 2 {
-            label.text = "Learn iOS development"
-          } else if indexPath.row % 5 == 3 {
-            label.text = "Soccer practice"
-          } else if indexPath.row % 5 == 4 {
-            label.text = "Eat ice cream"
+        if indexPath.row == 0 {
+            label.text = row0text
+          } else if indexPath.row == 1 {
+            label.text = row1text
+          } else if indexPath.row == 2 {
+            label.text = row2text
+          } else if indexPath.row == 3 {
+            label.text = row3text
+          } else if indexPath.row == 4 {
+            label.text = row4text
           }
           // End of new code block
 
