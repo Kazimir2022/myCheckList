@@ -46,11 +46,11 @@ class CheckListViewController: UITableViewController {
           let item5 = ChecklistItem()
           item5.text = "Eat ice cream"
           items.append(item5)
-        
+        /*
           let item6 = ChecklistItem()
           item6.text = "New text"
         items.append(item6)
-        
+        */
         
         
     }
@@ -96,6 +96,26 @@ class CheckListViewController: UITableViewController {
             configureCheckmark(for: cell, with: item)
           }
           tableView.deselectRow(at: indexPath, animated: true)
+    }
+    @IBAction func addItem(_ sender: Any) {
+       //узнаем каким будет индекс нашей новой строки
+          let newRowIndex = items.count
+        
+            // добавляем новый элемент в data model
+          let item = ChecklistItem()
+          item.text = "I am a new row"
+          items.append(item)
+
+        // создаем объект указывающий на новую строку
+          let indexPath = IndexPath(row: newRowIndex, section: 0)
+        
+        // создаем временный массив который содержит один элемент
+          let indexPaths = [indexPath]
+        
+            // добавляем новую строку по индексу
+        tableView.insertRows(at: indexPaths, with: .automatic)
+      
+        
     }
     
     

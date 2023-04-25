@@ -45,7 +45,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Checklists" id="Hs2-Dk-Svu">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="IvY-yW-Rwk"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="IvY-yW-Rwk">
+                            <connections>
+                                <action selector="addItem:" destination="hfd-GE-oDu" id="Iuj-nb-rJH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEK-tf-0IY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -58,7 +62,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jjc-kN-iaa" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eai-65-lNo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
