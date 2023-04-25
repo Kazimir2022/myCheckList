@@ -72,13 +72,9 @@ class CheckListViewController: UITableViewController {
             //запрашиваем объект в индексе который соответствует номеру строки
         let item = items[indexPath.row]
         
-        
+      configureText(for: cell, with: item)
       
-          let label = cell.viewWithTag(1000) as! UILabel//поиск конкретного вью с тегом и возвр ссылку на элемент
-        label.text = item.text
-    
-          // End of new code block
-       configureCheckmark(for: cell, at: indexPath)
+     configureCheckmark(for: cell, with: item)
           return cell
     }
     
@@ -94,7 +90,7 @@ class CheckListViewController: UITableViewController {
             let item = items[indexPath.row]
             item.checked.toggle()
 
-            configureCheckmark(for: cell, at: indexPath)
+            configureCheckmark(for: cell, with: item)
           }
           tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -102,17 +98,28 @@ class CheckListViewController: UITableViewController {
     
     func configureCheckmark(
       for cell: UITableViewCell,
-      at indexPath: IndexPath
+      with item: ChecklistItem
     ) {
-        // Replace full method implementation
-        let item = items[indexPath.row] // снова получаем один объект из массива объектов
-            // нет необходимости выводить др строки
+        
           if item.checked {
             cell.accessoryType = .checkmark
           } else {
             cell.accessoryType = .none
           }
       }
+    
+    
+    
+    func configureText(
+      for cell: UITableViewCell,
+      with item: ChecklistItem
+    ) {
+      let label = cell.viewWithTag(1000) as! UILabel
+      label.text = item.text
+    }
+    
+    
+    
             
 }
 
