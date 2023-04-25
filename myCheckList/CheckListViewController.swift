@@ -43,6 +43,13 @@ class CheckListViewController: UITableViewController {
           let item5 = ChecklistItem()
           item5.text = "Eat ice cream"
           items.append(item5)
+        
+          let item6 = ChecklistItem()
+          item6.text = "New text"
+        items.append(item6)
+        
+        
+        
     }
     
     //MARK: - Table View Data Sourse
@@ -50,7 +57,7 @@ class CheckListViewController: UITableViewController {
       _ tableView: UITableView,
       numberOfRowsInSection section: Int
     ) -> Int {
-      return 5
+        return items.count // количество элементов массива вместо жестко закодированого кода
     }
 
     override func tableView(
@@ -62,6 +69,7 @@ class CheckListViewController: UITableViewController {
         for: indexPath)
         
         // получаем один элемент массива обектов(одну строку)
+            //запрашиваем объект в индексе который соответствует номеру строки
         let item = items[indexPath.row]
         
         
