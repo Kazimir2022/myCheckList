@@ -21,6 +21,9 @@ class CheckListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         // Replace previous code with the following
           let item1 = ChecklistItem()
           item1.text = "Walk the dog"
