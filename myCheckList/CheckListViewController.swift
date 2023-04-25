@@ -14,7 +14,7 @@ class CheckListViewController: UITableViewController {
    var row2item = ChecklistItem()
    var row3item = ChecklistItem()
    var row4item = ChecklistItem()
-    
+  
   //MARK:  type annotation
   // var row100:ChecklistItem
     
@@ -23,7 +23,19 @@ class CheckListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Add the following lines
+          row0item.text = "Walk the dog"
+
+          row1item.text = "Brush my teeth"
+          row1item.checked = true
+
+          row2item.text = "Learn iOS development"
+          row2item.checked = true
+
+          row3item.text = "Soccer practice"
+
+          row4item.text = "Eat ice cream"
+          row4item.checked = true
         
         
     }
