@@ -81,6 +81,19 @@ class CheckListViewController: UITableViewController {
           return cell
     }
     
+    override func tableView(
+        _ tableView: UITableView,
+        commit editingStyle: UITableViewCell.EditingStyle,
+        forRowAt indexPath: IndexPath
+    ) {
+        // 1 удаляем элемент из модели данных
+        items.remove(at: indexPath.row)
+
+        // 2 удаляем соответствующую строку из table view
+        let indexPaths = [indexPath]
+        tableView.deleteRows(at: indexPaths, with: .automatic)
+    }
+    
     
     // MARK: - Table View Delegate
     override func tableView(
