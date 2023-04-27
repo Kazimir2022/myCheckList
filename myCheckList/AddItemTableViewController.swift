@@ -15,6 +15,12 @@ class AddItemTableViewController: UITableViewController {
         navigationItem.largeTitleDisplayMode = .never
         
     }
+    //вьюконтроллер вызывает метод перед тем как сцена станет видимой
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      textField.becomeFirstResponder()
+    }
+    
     @IBAction func cancel(){
         navigationController?.popViewController(animated: true)
     }
