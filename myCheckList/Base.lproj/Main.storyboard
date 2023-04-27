@@ -68,16 +68,16 @@
                             <tableViewSection id="Mxr-jR-z3F">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="68g-jC-W2c">
-                                        <rect key="frame" x="0.0" y="18" width="320" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="18" width="320" height="22.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="68g-jC-W2c" id="3Qy-Bo-9xR">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="19.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="22.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8WY-2P-5Sp">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8WY-2P-5Sp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="22.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -122,7 +122,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jjc-kN-iaa" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eai-65-lNo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
