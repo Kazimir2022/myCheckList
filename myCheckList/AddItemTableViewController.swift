@@ -6,8 +6,10 @@
 //
 
 import UIKit
-
-class AddItemTableViewController: UITableViewController, UITextViewDelegate {
+//чтобы проверить изменения, которые могут возникнуть в рузультате действия, нужно сделать вью контроллер делегатом для текстового поля
+    // т.к. это UITableViewController(в отличии от Table View), он может быть Data Sorce и  Delegate, а также он станет Delegate для TextField(UIUITextViewDelegate)
+  class AddItemTableViewController: UITableViewController, UITextViewDelegate {
+    @IBOutlet weak var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
@@ -36,4 +38,19 @@ class AddItemTableViewController: UITableViewController, UITextViewDelegate {
       return nil
     }
 
+      // MARK: - Text Field Delegates
+      func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+      ) -> Bool {
+        let oldText = textField.text!       ///
+        let stringRange = Range(range, in: oldText)!//конвертация NSRange в Range
+        
+        let newText = oldText.replacingCharacters(
+          in: stringRange,
+          with: string)
+          doneBarButton.isEnabled = !newText.isEmpty
+        return true
+      }
 }
