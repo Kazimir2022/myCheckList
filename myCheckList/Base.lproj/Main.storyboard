@@ -77,9 +77,10 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8WY-2P-5Sp">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="22.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="done" destination="xYa-30-CUd" eventType="editingDidEndOnExit" id="0WW-Lj-M51"/>
+                                                        <outlet property="delegate" destination="xYa-30-CUd" id="SA1-MA-Xu8"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>

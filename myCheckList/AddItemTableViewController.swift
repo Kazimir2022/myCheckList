@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddItemTableViewController: UITableViewController {
+class AddItemTableViewController: UITableViewController, UITextViewDelegate {
     @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
