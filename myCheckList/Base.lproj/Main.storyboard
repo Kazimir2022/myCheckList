@@ -17,14 +17,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" id="PUK-10-2gr">
-                                <rect key="frame" x="0.0" y="50" width="320" height="43"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PUK-10-2gr" id="yqE-4S-vki">
-                                    <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgC-W7-Whe">
-                                            <rect key="frame" x="16" y="11" width="248" height="21"/>
+                                            <rect key="frame" x="16" y="11" width="248" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -106,7 +106,7 @@
                                 <action selector="cancel" destination="xYa-30-CUd" id="6l3-9K-rtG"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="slU-ai-Afz">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="slU-ai-Afz">
                             <connections>
                                 <action selector="done" destination="xYa-30-CUd" id="rhx-DI-SZl"/>
                             </connections>
