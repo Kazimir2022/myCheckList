@@ -20,5 +20,12 @@ class AddItemTableViewController: UITableViewController {
     @IBAction func done(){
         navigationController?.popViewController(animated: true)
     }
+  
+    override func tableView(
+      _ tableView: UITableView,
+      willSelectRowAt indexPath: IndexPath
+    ) -> IndexPath? {// так как это опционал поэтому можно вернуть nil
+      return nil
+    }
 
 }
