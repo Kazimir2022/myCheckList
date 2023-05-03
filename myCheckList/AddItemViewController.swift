@@ -6,9 +6,18 @@
 //
 
 import UIKit
-//чтобы проверить изменения, которые могут возникнуть в рузультате действия, нужно сделать вью контроллер делегатом для текстового поля
-    // т.к. это UITableViewController(в отличии от Table View), он может быть Data Sorce и  Delegate, а также он станет Delegate для TextField(UIUITextViewDelegate)
-  class AddItemTableViewController: UITableViewController, UITextFieldDelegate {
+protocol AddItemViewControllerDelegate: AnyObject {
+  func addItemViewControllerDidCancel(
+    _ controller: AddItemViewController)
+  func addItemViewController(
+    _ controller: AddItemViewController,
+    didFinishAdding item: ChecklistItem
+  )
+}
+
+  class AddItemViewController: UITableViewController, UITextFieldDelegate {
+     //ссылка на делегат
+    weak var delegate: AddItemViewControllerDelegate?
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var textField: UITextField!
     
@@ -24,11 +33,16 @@ import UIKit
     }
     
     @IBAction func cancel(){
-        navigationController?.popViewController(animated: true)
+        delegate?.addItemViewControllerDidCancel(self)
     }
     @IBAction func done(){
-       print("Contents of the text field: \(textField.text!)")
-        navigationController?.popViewController(animated: true)
+        
+        let item = ChecklistItem()
+          item.text = textField.text!
+
+          delegate?.addItemViewController(self, didFinishAdding: item)
+
+        
     }
   
     override func tableView(
