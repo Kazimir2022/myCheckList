@@ -17,14 +17,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" id="PUK-10-2gr">
-                                <rect key="frame" x="0.0" y="50" width="320" height="43"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PUK-10-2gr" id="yqE-4S-vki">
-                                    <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgC-W7-Whe">
-                                            <rect key="frame" x="16" y="11" width="248" height="21"/>
+                                            <rect key="frame" x="16" y="11" width="248" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                     <navigationItem key="navigationItem" title="Checklists" id="Hs2-Dk-Svu">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IvY-yW-Rwk">
                             <connections>
-                                <segue destination="xYa-30-CUd" kind="show" id="cbm-UI-PNk"/>
+                                <segue destination="xYa-30-CUd" kind="show" identifier="AddItem" id="cbm-UI-PNk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -9,10 +9,17 @@ import UIKit
 
 class CheckListViewController: UITableViewController, AddItemViewControllerDelegate {
     func addItemViewControllerDidCancel(_ controller: AddItemViewController) {
+        
         navigationController?.popViewController(animated: true)
     }
     
     func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: ChecklistItem) {
+        let newRowIndex = items.count
+          items.append(item)
+
+          let indexPath = IndexPath(row: newRowIndex, section: 0)
+          let indexPaths = [indexPath]
+          tableView.insertRows(at: indexPaths, with: .automatic)
         navigationController?.popViewController(animated: true)
     }
     
@@ -118,27 +125,6 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
           }
           tableView.deselectRow(at: indexPath, animated: true)
     }
-    @IBAction func addItem(_ sender: Any) {
-       //узнаем каким будет индекс нашей новой строки
-          let newRowIndex = items.count
-        
-            // добавляем новый элемент в data model
-          let item = ChecklistItem()
-          item.text = "I am a new row"
-          items.append(item)
-
-        // создаем объект указывающий на новую строку
-          let indexPath = IndexPath(row: newRowIndex, section: 0)
-        
-        // создаем временный массив который содержит один элемент
-          let indexPaths = [indexPath]
-        
-            // добавляем новую строку по индексу
-        tableView.insertRows(at: indexPaths, with: .automatic)
-      
-        
-    }
-    
     
     func configureCheckmark(
       for cell: UITableViewCell,
@@ -151,8 +137,6 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
             cell.accessoryType = .none
           }
       }
-    
-    
     
     func configureText(
       for cell: UITableViewCell,
