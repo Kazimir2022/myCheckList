@@ -8,7 +8,7 @@
 import UIKit
 //чтобы проверить изменения, которые могут возникнуть в рузультате действия, нужно сделать вью контроллер делегатом для текстового поля
     // т.к. это UITableViewController(в отличии от Table View), он может быть Data Sorce и  Delegate, а также он станет Delegate для TextField(UIUITextViewDelegate)
-  class AddItemTableViewController: UITableViewController, UITextViewDelegate {
+  class AddItemTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var textField: UITextField!
     
