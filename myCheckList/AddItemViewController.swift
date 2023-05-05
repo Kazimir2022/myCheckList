@@ -26,11 +26,13 @@ protocol AddItemViewControllerDelegate: AnyObject {
       
     override func viewDidLoad() {
         super.viewDidLoad()
-        //title = "fbdfbdfbd"
+      
         navigationItem.largeTitleDisplayMode = .never
-        if let item = itemToEdit {
+        //variable shadowing — you create a "shadow" instance of the itemToEdit variable
+        // создаем теневой экземпляр для блока if
+        if let itemToEdit = itemToEdit {
           title = "Edit Item"
-          textField.text = item.text
+          textField.text = itemToEdit.text
           doneBarButton.isEnabled = true
         }
         
