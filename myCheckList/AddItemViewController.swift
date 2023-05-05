@@ -21,9 +21,18 @@ protocol AddItemViewControllerDelegate: AnyObject {
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var textField: UITextField!
     
+      var itemToEdit: ChecklistItem?
+      
+      
     override func viewDidLoad() {
         super.viewDidLoad()
+        //title = "fbdfbdfbd"
         navigationItem.largeTitleDisplayMode = .never
+        if let item = itemToEdit {
+          title = "Edit Item"
+          textField.text = item.text
+          doneBarButton.isEnabled = true
+        }
         
     }
     //вьюконтроллер вызывает метод перед тем как сцена станет видимой
