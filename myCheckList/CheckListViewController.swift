@@ -14,6 +14,8 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
     }
     
     func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: ChecklistItem) {
+        //вставляем строку по указанному индексу
+        
         let newRowIndex = items.count
           items.append(item)
 
