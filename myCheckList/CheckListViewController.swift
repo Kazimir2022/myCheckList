@@ -8,6 +8,8 @@
 import UIKit
 
 class CheckListViewController: UITableViewController, AddItemViewControllerDelegate {
+
+    
     func addItemViewControllerDidCancel(_ controller: AddItemViewController) {
         
         navigationController?.popViewController(animated: true)
@@ -167,8 +169,21 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
         let controller = segue.destination as! AddItemViewController
         // 3
         controller.delegate = self
+      } else if segue.identifier == "EditItem" {
+          
+          let controller = segue.destination as! AddItemViewController
+              controller.delegate = self
+          
+          //if let indexP = tableView.indexPath(for: <#T##UITableViewCell#>)
+          
+          
+          //индекс строки по указанной ячейке(тип <#T##UITableViewCell#>).sender - отправитель(тип Any?)
+          if let indexPath = tableView.indexPath(
+                for: sender as! UITableViewCell) {
+                controller.itemToEdit = items[indexPath.row]
       }
     }
+  }
     
             
 }

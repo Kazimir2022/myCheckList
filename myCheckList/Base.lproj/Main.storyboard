@@ -48,7 +48,7 @@ FuKImg
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="xYa-30-CUd" kind="show" identifier="EditItem" trigger="accessoryAction" id="IVP-uY-dpS"/>
+                                    <segue destination="xYa-30-CUd" kind="show" identifier="EditItem" trigger="accessoryAction" id="eFP-th-uyz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -154,7 +154,7 @@ FuKImg
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IVP-uY-dpS"/>
+        <segue reference="eFP-th-uyz"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
