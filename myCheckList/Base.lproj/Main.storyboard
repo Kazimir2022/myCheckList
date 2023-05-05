@@ -47,6 +47,9 @@ FuKImg
                                         <constraint firstItem="f8N-og-4iQ" firstAttribute="leading" secondItem="yqE-4S-vki" secondAttribute="leadingMargin" constant="11" id="zg6-aT-0E3"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="xYa-30-CUd" kind="show" identifier="EditItem" trigger="accessoryAction" id="IVP-uY-dpS"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -150,6 +153,9 @@ FuKImg
             <point key="canvasLocation" x="277.5" y="-115.14084507042254"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="IVP-uY-dpS"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
