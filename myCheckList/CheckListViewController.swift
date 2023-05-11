@@ -30,10 +30,11 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
       _ controller: AddItemViewController,
       didFinishEditing item: ChecklistItem
     ) {
-      if let index = items.firstIndex(of: item) {
-        let indexPath = IndexPath(row: index, section: 0)
-        if let cell = tableView.cellForRow(at: indexPath) {
-          configureText(for: cell, with: item)
+      if let index = items.firstIndex(of: item) { //узнаем под каким индексом находится редактируемый элемент в массиве
+          print(index)                            // без соответсвия протоколу NSObject не будет доступен данный метод
+          let indexPath = IndexPath(row: index, section: 0)// узнаем под каким индексом находится строка в таблице
+          if let cell = tableView.cellForRow(at: indexPath) {// получаем ячейку из таблицы по индексу
+              configureText(for: cell, with: item)//поиск лейбла по тагу, изм лейбл
         }
       }
       navigationController?.popViewController(animated: true)
