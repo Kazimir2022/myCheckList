@@ -10,6 +10,20 @@ import UIKit
 class CheckListViewController: UITableViewController, AddItemViewControllerDelegate {
 
     
+ func documentsDirectory() -> URL {
+      let paths = FileManager.default.urls(
+        for: .documentDirectory,
+        in: .userDomainMask)
+      return paths[0]
+    }
+
+    func dataFilePath() -> URL {
+      return documentsDirectory().appendingPathComponent("Checklists.plist")
+    }
+    
+    
+    
+    
     func itemDetailViewControllerDidCancel(_ controller: AddItemViewController) {
         
         navigationController?.popViewController(animated: true)
@@ -78,12 +92,9 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
           let item5 = ChecklistItem()
           item5.text = "Eat ice cream"
           items.append(item5)
-        /*
-          let item6 = ChecklistItem()
-          item6.text = "New text"
-        items.append(item6)
-        */
-        
+    
+        print("Documents folder is \(documentsDirectory())")
+          print("Data file path is \(dataFilePath())")
         
     }
     
@@ -170,7 +181,23 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
       let label = cell.viewWithTag(1000) as! UILabel
       label.text = item.text
     }
-    
+    func saveChecklistItems() {
+      // 1
+      let encoder = PropertyListEncoder()
+      // 2
+      do {
+        // 3
+        let data = try encoder.encode(items)
+        // 4
+        try data.write(
+          to: dataFilePath(),
+          options: Data.WritingOptions.atomic)
+        // 5
+      } catch {
+        // 6
+        print("Error encoding item array: \(error.localizedDescription)")
+      }
+    }
     // MARK: - Navigation
     override func prepare(
       for segue: UIStoryboardSegue,
