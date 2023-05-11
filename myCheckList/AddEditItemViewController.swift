@@ -8,18 +8,18 @@
 import UIKit
 protocol AddItemViewControllerDelegate: AnyObject {
   func addItemViewControllerDidCancel(
-    _ controller: AddItemViewController)
+    _ controller: AddEditItemViewController)
   func addItemViewController(
-    _ controller: AddItemViewController,
+    _ controller: AddEditItemViewController,
     didFinishAdding item: ChecklistItem  //добавление
   )
   func addItemViewController(
-      _ controller: AddItemViewController,
+      _ controller: AddEditItemViewController,
       didFinishEditing item: ChecklistItem // редактирование
     )
 }
 
-  class AddItemViewController: UITableViewController, UITextFieldDelegate {
+  class AddEditItemViewController: UITableViewController, UITextFieldDelegate {
      //ссылка на делегат
     weak var delegate: AddItemViewControllerDelegate?
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
