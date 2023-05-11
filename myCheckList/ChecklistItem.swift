@@ -10,7 +10,7 @@
 
 //MARK: make a new object
 import Foundation
-class ChecklistItem {
+class ChecklistItem: NSObject {
   var text = ""        // instance variables
   var checked = false
 }

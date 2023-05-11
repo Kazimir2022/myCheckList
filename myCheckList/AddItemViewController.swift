@@ -11,8 +11,12 @@ protocol AddItemViewControllerDelegate: AnyObject {
     _ controller: AddItemViewController)
   func addItemViewController(
     _ controller: AddItemViewController,
-    didFinishAdding item: ChecklistItem
+    didFinishAdding item: ChecklistItem  //добавление
   )
+  func addItemViewController(
+      _ controller: AddItemViewController,
+      didFinishEditing item: ChecklistItem // редактирование
+    )
 }
 
   class AddItemViewController: UITableViewController, UITextFieldDelegate {
@@ -49,12 +53,16 @@ protocol AddItemViewControllerDelegate: AnyObject {
     }
     @IBAction func done(){
         
-        let item = ChecklistItem()
-          item.text = textField.text!
-
-          delegate?.addItemViewController(self, didFinishAdding: item)
-
-        
+         if let item = itemToEdit {
+            item.text = textField.text!
+            delegate?.addItemViewController(
+              self,
+              didFinishEditing: item)
+          } else {
+            let item = ChecklistItem()
+            item.text = textField.text!
+            delegate?.addItemViewController(self, didFinishAdding: item)
+          }
     }
   
     override func tableView(
