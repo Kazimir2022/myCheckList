@@ -38,6 +38,7 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
           let indexPath = IndexPath(row: newRowIndex, section: 0)
           let indexPaths = [indexPath]
           tableView.insertRows(at: indexPaths, with: .automatic)
+        saveChecklistItems()
         navigationController?.popViewController(animated: true)
     }
     func itemDetailViewController(
@@ -51,6 +52,7 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
               configureText(for: cell, with: item)//поиск лейбла по тагу, изм лейбл
         }
       }
+        saveChecklistItems()
       navigationController?.popViewController(animated: true)
     }
     
@@ -135,6 +137,7 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
         // 2 удаляем соответствующую строку из table view
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
+        saveChecklistItems()
     }
     
     
@@ -152,6 +155,7 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
             configureCheckmark(for: cell, with: item)
           }
           tableView.deselectRow(at: indexPath, animated: true)
+        saveChecklistItems()
     }
     
     func configureCheckmark(
@@ -198,6 +202,7 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
         print("Error encoding item array: \(error.localizedDescription)")
       }
     }
+    
     // MARK: - Navigation
     override func prepare(
       for segue: UIStoryboardSegue,
