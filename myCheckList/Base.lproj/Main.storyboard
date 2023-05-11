@@ -23,7 +23,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgC-W7-Whe">
-                                            <rect key="frame" x="52" y="11.666666666666666" width="41.666666666666657" height="20.333333333333336"/>
+                                            <rect key="frame" x="52.333333333333343" y="11.666666666666666" width="41.666666666666657" height="20.333333333333336"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@ FuKImg
         <!--add item-->
         <scene sceneID="54Q-ZO-1Zv">
             <objects>
-                <tableViewController id="xYa-30-CUd" customClass="AddEditItemViewController" customModule="myCheckList" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xYa-30-CUd" customClass="AddItemViewController" customModule="myCheckList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="PW4-Tb-z1I">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

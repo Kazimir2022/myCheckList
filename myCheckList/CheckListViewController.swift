@@ -10,12 +10,12 @@ import UIKit
 class CheckListViewController: UITableViewController, AddItemViewControllerDelegate {
 
     
-    func addItemViewControllerDidCancel(_ controller: AddEditItemViewController) {
+    func itemDetailViewControllerDidCancel(_ controller: AddItemViewController) {
         
         navigationController?.popViewController(animated: true)
     }
     
-    func addItemViewController(_ controller: AddEditItemViewController, didFinishAdding item: ChecklistItem) {
+    func itemDetailViewController(_ controller: AddItemViewController, didFinishAdding item: ChecklistItem) {
         //вставляем строку по указанному индексу
         
         let newRowIndex = items.count
@@ -26,8 +26,8 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
           tableView.insertRows(at: indexPaths, with: .automatic)
         navigationController?.popViewController(animated: true)
     }
-    func addItemViewController(
-      _ controller: AddEditItemViewController,
+    func itemDetailViewController(
+      _ controller: AddItemViewController,
       didFinishEditing item: ChecklistItem
     ) {
       if let index = items.firstIndex(of: item) { //узнаем под каким индексом находится редактируемый элемент в массиве
@@ -179,12 +179,12 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
       // 1
       if segue.identifier == "AddItem" {
         // 2
-        let controller = segue.destination as! AddEditItemViewController
+        let controller = segue.destination as! AddItemViewController
         // 3
         controller.delegate = self
       } else if segue.identifier == "EditItem" {
           
-          let controller = segue.destination as! AddEditItemViewController
+          let controller = segue.destination as! AddItemViewController
               controller.delegate = self
           
           //if let indexP = tableView.indexPath(for: <#T##UITableViewCell#>)
