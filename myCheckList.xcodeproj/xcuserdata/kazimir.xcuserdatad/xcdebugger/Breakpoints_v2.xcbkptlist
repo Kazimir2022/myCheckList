@@ -3,4 +3,47 @@
    uuid = "F86EFD6F-D922-4280-8299-D3CDC9141447"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         <BreakpointContent
+            uuid = "6049EB46-B44E-4445-B929-DF50D37A8FB4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = "loadChecklistItems"
+            moduleName = "">
+            <Locations>
+               <Location
+                  uuid = "6049EB46-B44E-4445-B929-DF50D37A8FB4 - 24f0cb555c9bcec1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myCheckList.CheckListViewController.loadChecklistItems() -&gt; ()"
+                  moduleName = "myCheckList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kazimir/Desktop/myProjects/myCheckList/myCheckList/CheckListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "144">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         <BreakpointContent
+            uuid = "96063515-923A-4D9E-A807-35BC6EC629C8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = "myCheckList`myCheckList.CheckListViewController.loadChecklistItems() -&gt; ()"
+            moduleName = "">
+            <Locations>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

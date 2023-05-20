@@ -53,13 +53,13 @@ protocol AddItemViewControllerDelegate: AnyObject {
     }
     @IBAction func done(){
         
-         if let item = itemToEdit {
+         if let item = itemToEdit {//
             item.text = textField.text!
             delegate?.itemDetailViewController(
               self,
               didFinishEditing: item)
           } else {
-            let item = ChecklistItem()
+            let item = ChecklistItem()// создаем новый экземпляр
             item.text = textField.text!
             delegate?.itemDetailViewController(self, didFinishAdding: item)
           }
