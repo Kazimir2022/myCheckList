@@ -12,7 +12,7 @@ class AllListsViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
   }
   
   // MARK: - Table view data source
