@@ -7,39 +7,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--All Lists -->
         <scene sceneID="jTh-x7-cJj">
             <objects>
-                <tableViewController id="2Sc-Pi-vXS" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="cWK-AD-Tot">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TlO-10-YHA">
-                                <rect key="frame" x="0.0" y="50" width="320" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TlO-10-YHA" id="i9K-Ox-6TK">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="2Sc-Pi-vXS" id="f9s-iC-9Kl"/>
-                            <outlet property="delegate" destination="2Sc-Pi-vXS" id="782-oV-xpl"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="EAX-YE-0e2"/>
+                <tableViewController id="2Sc-Pi-vXS" userLabel="All Lists " customClass="AllListsViewController" customModule="myCheckList" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Checklists" id="EAX-YE-0e2"/>
+                    <connections>
+                        <segue destination="hfd-GE-oDu" kind="show" id="log-2f-cRb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VK9-HS-lvg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1275" y="-843"/>
         </scene>
-        <!--Checklists-->
+        <!--Checklist-->
         <scene sceneID="RYq-LF-nQL">
             <objects>
-                <tableViewController id="hfd-GE-oDu" customClass="CheckListViewController" customModule="myCheckList" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="hfd-GE-oDu" userLabel="Checklist" customClass="CheckListViewController" customModule="myCheckList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="XAG-i3-jYs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,7 +70,7 @@ FuKImg
                             <outlet property="delegate" destination="hfd-GE-oDu" id="e4Q-iI-UYw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Checklists" id="Hs2-Dk-Svu">
+                    <navigationItem key="navigationItem" title="(Name of the Checklist)" id="Hs2-Dk-Svu">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IvY-yW-Rwk">
                             <connections>
                                 <segue destination="xYa-30-CUd" kind="show" identifier="AddItem" id="cbm-UI-PNk"/>
@@ -103,7 +87,7 @@ FuKImg
             <objects>
                 <tableViewController id="xYa-30-CUd" customClass="AddItemViewController" customModule="myCheckList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="PW4-Tb-z1I">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -183,7 +167,7 @@ FuKImg
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cbm-UI-PNk"/>
+        <segue reference="eFP-th-uyz"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
