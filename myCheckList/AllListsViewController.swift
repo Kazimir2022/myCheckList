@@ -12,6 +12,7 @@ class AllListsViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    //we set up the cell identifier to be at the class level
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
   }
   
