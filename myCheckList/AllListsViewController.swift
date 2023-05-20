@@ -32,6 +32,7 @@ class AllListsViewController: UITableViewController {
     cell.textLabel!.text = "List \(indexPath.row)"
     return cell
   }
+  AllListsViewController.tableView(_:didSelectRowAt:)
   // MARK: - Table View Delegate
   override func tableView(
     _ tableView: UITableView,
