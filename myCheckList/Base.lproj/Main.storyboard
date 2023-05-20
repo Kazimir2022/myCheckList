@@ -70,7 +70,7 @@ FuKImg
                             <outlet property="delegate" destination="hfd-GE-oDu" id="e4Q-iI-UYw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="(Name of the Checklist)" id="Hs2-Dk-Svu">
+                    <navigationItem key="navigationItem" title="(Name of the Checklist)" largeTitleDisplayMode="never" id="Hs2-Dk-Svu">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IvY-yW-Rwk">
                             <connections>
                                 <segue destination="xYa-30-CUd" kind="show" identifier="AddItem" id="cbm-UI-PNk"/>
