@@ -9,12 +9,25 @@ import UIKit
 
 class AllListsViewController: UITableViewController {
   let cellIdentifier = "ChecklistCell"
+  var lists = [Checklist]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     navigationController?.navigationBar.prefersLargeTitles = true
     //we set up the cell identifier to be at the class level
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+    // Add placeholder data
+      var list = Checklist(name: "Birthdays")
+      lists.append(list)
+
+      list = Checklist(name: "Groceries")
+      lists.append(list)
+
+      list = Checklist(name: "Cool Apps")
+      lists.append(list)
+
+      list = Checklist(name: "To Do")
+      lists.append(list)
   }
   
   // MARK: - Table view data source
@@ -32,7 +45,6 @@ class AllListsViewController: UITableViewController {
     cell.textLabel!.text = "List \(indexPath.row)"
     return cell
   }
-  AllListsViewController.tableView(_:didSelectRowAt:)
   // MARK: - Table View Delegate
   override func tableView(
     _ tableView: UITableView,
