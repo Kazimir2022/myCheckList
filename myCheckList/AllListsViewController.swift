@@ -17,23 +17,23 @@ class AllListsViewController: UITableViewController {
     //we set up the cell identifier to be at the class level
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
     // Add placeholder data
-      var list = Checklist(name: "Birthdays")
-      lists.append(list)
-
-      list = Checklist(name: "Groceries")
-      lists.append(list)
-
-      list = Checklist(name: "Cool Apps")
-      lists.append(list)
-
-      list = Checklist(name: "To Do")
-      lists.append(list)
+    var list = Checklist(name: "Birthdays")
+    lists.append(list)
+    
+    list = Checklist(name: "Groceries")
+    lists.append(list)
+    
+    list = Checklist(name: "Cool Apps")
+    lists.append(list)
+    
+    list = Checklist(name: "To Do")
+    lists.append(list)
   }
   
   // MARK: - Table view data source
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-    return 3
+    return lists.count
   }
   
   override func tableView(
@@ -41,8 +41,13 @@ class AllListsViewController: UITableViewController {
     cellForRowAt indexPath: IndexPath
   ) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(
-      withIdentifier: cellIdentifier, for: indexPath)
-    cell.textLabel!.text = "List \(indexPath.row)"
+      withIdentifier: cellIdentifier,
+      for: indexPath)
+    // Update cell information
+    let checklist = lists[indexPath.row]
+    cell.textLabel!.text = checklist.name
+    cell.accessoryType = .detailDisclosureButton
+    
     return cell
   }
   // MARK: - Table View Delegate
