@@ -37,7 +37,7 @@ class AllListsViewController: UITableViewController {
   ) {
     if segue.identifier == "ShowChecklist" {
       let controller = segue.destination as! ChecklistViewController
-      controller.checklist = sender as? Checklist
+      controller.checklist = sender as? Checklist // отправитель имеет тип Any?
     }
   }
   
@@ -69,7 +69,7 @@ class AllListsViewController: UITableViewController {
     let checklist = lists[indexPath.row]
     performSegue(
       withIdentifier: "ShowChecklist",
-      sender: checklist)
+      sender: checklist)//// отправитель будет  иметь тип Any?
     // performSegue(withIdentifier: "ShowChecklist", sender: nil)
   }
 }

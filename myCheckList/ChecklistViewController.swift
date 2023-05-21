@@ -7,7 +7,7 @@ import UIKit
 
 class ChecklistViewController: UITableViewController, AddItemViewControllerDelegate {
   var items = [ChecklistItem]()
-  var checklist: Checklist!
+  var checklist: Checklist!// свойству позволено быть nil до момента загрузки viewDidLoad() поэтому оно "!"
   
     override func viewDidLoad() {
         super.viewDidLoad()
