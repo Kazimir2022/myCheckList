@@ -28,4 +28,19 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
   weak var delegate: ListDetailViewControllerDelegate?
   
   var checklistToEdit: Checklist?
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    if let checklist = checklistToEdit {
+      title = "Edit Checklist"
+      textField.text = checklist.name
+      doneBarButton.isEnabled = true
+    }
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    textField.becomeFirstResponder()
+  }
 }
