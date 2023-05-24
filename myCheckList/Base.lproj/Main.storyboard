@@ -14,13 +14,13 @@
                     <navigationItem key="navigationItem" title="Checklists" id="EAX-YE-0e2">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="u4X-se-v1e">
                             <connections>
-                                <segue destination="N9J-7k-Ulx" kind="show" id="nyb-hL-b95"/>
+                                <segue destination="N9J-7k-Ulx" kind="show" identifier="AddChecklist" id="nyb-hL-b95"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="hfd-GE-oDu" kind="show" identifier="ShowChecklist" id="log-2f-cRb"/>
-                        <segue destination="N9J-7k-Ulx" kind="show" id="ulb-r4-Gv1"/>
+                        <segue destination="N9J-7k-Ulx" kind="show" identifier="EditChecklist" id="ulb-r4-Gv1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VK9-HS-lvg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

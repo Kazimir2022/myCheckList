@@ -7,16 +7,15 @@
 
 import UIKit
 
-class AllListsViewController: UITableViewController {
+class AllListsViewController: UITableViewController, ListDetailViewControllerDelegate {
   let cellIdentifier = "ChecklistCell"
   var lists = [Checklist]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     navigationController?.navigationBar.prefersLargeTitles = true
-    //we set up the cell identifier to be at the class level
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
-    // Add placeholder data
+    
     var list = Checklist(name: "Birthdays")
     lists.append(list)
     
@@ -38,12 +37,17 @@ class AllListsViewController: UITableViewController {
     if segue.identifier == "ShowChecklist" {
       let controller = segue.destination as! ChecklistViewController
       controller.checklist = sender as? Checklist // отправитель имеет тип Any?
+    } else if segue.identifier == "AddChecklist" {
+      let controller = segue.destination as! ListDetailViewController
+      controller.delegate = self
     }
   }
   
   // MARK: - Table view data source
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
+  override func tableView(
+    _ tableView: UITableView,
+    numberOfRowsInSection section: Int
+  ) -> Int {
     return lists.count
   }
   
@@ -54,14 +58,14 @@ class AllListsViewController: UITableViewController {
     let cell = tableView.dequeueReusableCell(
       withIdentifier: cellIdentifier,
       for: indexPath)
-    // Update cell information
+    
     let checklist = lists[indexPath.row]
     cell.textLabel!.text = checklist.name
     cell.accessoryType = .detailDisclosureButton
     
     return cell
   }
-  // MARK: - Table View Delegate
+  
   override func tableView(
     _ tableView: UITableView,
     didSelectRowAt indexPath: IndexPath
@@ -69,7 +73,53 @@ class AllListsViewController: UITableViewController {
     let checklist = lists[indexPath.row]
     performSegue(
       withIdentifier: "ShowChecklist",
-      sender: checklist)//// отправитель будет  иметь тип Any?
-    // performSegue(withIdentifier: "ShowChecklist", sender: nil)
+      sender: checklist)
+  }
+  
+  override func tableView(
+    _ tableView: UITableView,
+    commit editingStyle: UITableViewCell.EditingStyle,
+    forRowAt indexPath: IndexPath
+  ) {
+    lists.remove(at: indexPath.row)
+    
+    let indexPaths = [indexPath]
+    tableView.deleteRows(at: indexPaths, with: .automatic)
+  }
+  
+  // MARK: - List Detail View Controller Delegates
+  func listDetailViewControllerDidCancel(
+    _ controller: ListDetailViewController
+  ) {
+    navigationController?.popViewController(animated: true)
+  }
+  
+  func listDetailViewController(
+    _ controller: ListDetailViewController,
+    didFinishAdding checklist: Checklist
+  ) {
+    let newRowIndex = lists.count
+    lists.append(checklist)
+    
+    let indexPath = IndexPath(row: newRowIndex, section: 0)
+    let indexPaths = [indexPath]
+    tableView.insertRows(at: indexPaths, with: .automatic)
+    
+    navigationController?.popViewController(animated: true)
+  }
+  
+  func listDetailViewController(
+    _ controller: ListDetailViewController,
+    didFinishEditing checklist: Checklist
+  ) {
+    if let index = lists.firstIndex(of: checklist) {
+      let indexPath = IndexPath(row: index, section: 0)
+      if let cell = tableView.cellForRow(at: indexPath) {
+        cell.textLabel!.text = checklist.name
+      }
+    }
+    navigationController?.popViewController(animated: true)
   }
 }
+
+
