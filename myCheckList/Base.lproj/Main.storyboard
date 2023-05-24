@@ -11,7 +11,13 @@
         <scene sceneID="jTh-x7-cJj">
             <objects>
                 <tableViewController id="2Sc-Pi-vXS" userLabel="All Lists " customClass="AllListsViewController" customModule="myCheckList" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Checklists" id="EAX-YE-0e2"/>
+                    <navigationItem key="navigationItem" title="Checklists" id="EAX-YE-0e2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="u4X-se-v1e">
+                            <connections>
+                                <segue destination="N9J-7k-Ulx" kind="show" id="nyb-hL-b95"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="hfd-GE-oDu" kind="show" identifier="ShowChecklist" id="log-2f-cRb"/>
                         <segue destination="N9J-7k-Ulx" kind="show" id="ulb-r4-Gv1"/>
@@ -233,6 +239,7 @@ FuKImg
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="ulb-r4-Gv1"/>
         <segue reference="eFP-th-uyz"/>
     </inferredMetricsTieBreakers>
     <resources>
