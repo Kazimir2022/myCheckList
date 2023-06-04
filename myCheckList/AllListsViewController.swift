@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AllListsViewController: UITableViewController, ListDetailViewControllerDelegate {
+class AllListsViewController: UITableViewController, ListDetailViewControllerDelegate, UINavigationControllerDelegate {
   let cellIdentifier = "ChecklistCell"
   var dataModel: DataModel!
   
@@ -63,6 +63,11 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
     performSegue(
       withIdentifier: "ShowChecklist",
       sender: checklist)
+    
+    // add this line:
+    UserDefaults.standard.set(
+      indexPath.row,
+      forKey: "ChecklistIndex")
   }
   
   override func tableView(
@@ -90,6 +95,18 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
     navigationController?.pushViewController(
       controller,
       animated: true)
+  }
+  
+  // MARK: - Navigation Controller Delegates
+  func navigationController(
+    _ navigationController: UINavigationController,
+    willShow viewController: UIViewController,
+    animated: Bool
+  ) {
+    // Was the back button tapped?
+    if viewController === self {
+      UserDefaults.standard.set(-1, forKey: "ChecklistIndex")
+    }
   }
   
   // MARK: - List Detail View Controller Delegates
