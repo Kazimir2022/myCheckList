@@ -16,17 +16,12 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
     navigationController?.navigationBar.prefersLargeTitles = true
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
     
-    var list = Checklist(name: "Birthdays")
-    lists.append(list)
-    
-    list = Checklist(name: "Groceries")
-    lists.append(list)
-    
-    list = Checklist(name: "Cool Apps")
-    lists.append(list)
-    
-    list = Checklist(name: "To Do")
-    lists.append(list)
+    // Add placeholder item data
+    for list in lists {
+      let item = ChecklistItem()
+      item.text = "Item for \(list.name)"
+      list.items.append(item)
+    }
   }
   
   // MARK: - Navigation
