@@ -192,12 +192,7 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
          saveChecklistItems()
        navigationController?.popViewController(animated: true)
      }
-     
-    
-    
-   
-        
-            
+  
 }
 
 

@@ -157,7 +157,7 @@ FuKImg
         <!--Add Checklist-->
         <scene sceneID="kWU-Md-xqw">
             <objects>
-                <tableViewController id="N9J-7k-Ulx" customClass="ListDetailViewController" customModule="myCheckList" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ListDetailViewController" id="N9J-7k-Ulx" customClass="ListDetailViewController" customModule="myCheckList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="vJ8-mn-NY9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,7 +217,7 @@ FuKImg
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6Y-Zb-dew" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="244" y="672"/>
+            <point key="canvasLocation" x="244" y="638"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="A87-vQ-ouO">
