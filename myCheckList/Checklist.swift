@@ -9,6 +9,7 @@ import UIKit
 
 class Checklist: NSObject {
   var name = ""
+  var items = [ChecklistItem]()     // add this line»
   
   init(name: String) {
     self.name = name
