@@ -12,6 +12,7 @@ class DataModel {
   
   init() {
     loadChecklists()
+    registerDefaults()
   }
   
   // MARK: - Data Saving
@@ -55,4 +56,11 @@ class DataModel {
       }
     }
   }
+  
+  // MARK: - Defaults
+  func registerDefaults() {
+    let dictionary = ["ChecklistIndex": -1]
+    UserDefaults.standard.register(defaults: dictionary)
+  }
+  
 }
