@@ -20,13 +20,12 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    
-    navigationController?.delegate = self
+    navigationController?.delegate = self//назначаем делегат
     
     let index = UserDefaults.standard.integer(
-      forKey: "ChecklistIndex")
+      forKey: "ChecklistIndex")// получаем значение из файла
     if index != -1 {
-      let checklist = dataModel.lists[index]
+      let checklist = dataModel.lists[index]//0,1,3......
       performSegue(
         withIdentifier: "ShowChecklist",
         sender: checklist)
@@ -40,7 +39,7 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
   ) {
     if segue.identifier == "ShowChecklist" {
       let controller = segue.destination as! ChecklistViewController
-      controller.checklist = sender as? Checklist // отправитель имеет тип Any?
+      controller.checklist = sender as? Checklist
     } else if segue.identifier == "AddChecklist" {
       let controller = segue.destination as! ListDetailViewController
       controller.delegate = self
@@ -111,16 +110,17 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
       controller,
       animated: true)
   }
-  
+
   // MARK: - Navigation Controller Delegates
   func navigationController(
     _ navigationController: UINavigationController,
     willShow viewController: UIViewController,
     animated: Bool
   ) {
+    debugPrint("func navigationController!!!!")
     // Was the back button tapped?
     if viewController === self {
-      UserDefaults.standard.set(-1, forKey: "ChecklistIndex")
+      UserDefaults.standard.set(-1, forKey: "ChecklistIndex") //Back
     }
   }
   
