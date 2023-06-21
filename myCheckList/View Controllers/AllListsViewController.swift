@@ -30,6 +30,12 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
     }
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    tableView.reloadData()
+  }
+
+  
   // MARK: - Navigation
   override func prepare(
     for segue: UIStoryboardSegue,
