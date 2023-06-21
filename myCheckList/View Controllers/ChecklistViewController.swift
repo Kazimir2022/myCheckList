@@ -21,10 +21,10 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
     sender: Any?
   ) {
     if segue.identifier == "AddItem" {
-      let controller = segue.destination as! AddItemViewController
+      let controller = segue.destination as! ItemDetailViewController
       controller.delegate = self
     } else if segue.identifier == "EditItem" {
-      let controller = segue.destination as! AddItemViewController
+      let controller = segue.destination as! ItemDetailViewController
       controller.delegate = self
       
       if let indexPath = tableView.indexPath(
@@ -106,27 +106,27 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
   }
   
   // MARK: - Add Item ViewController Delegates
-  func itemDetailViewControllerDidCancel(_ controller: AddItemViewController) {
+  func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController) {
     navigationController?.popViewController(animated: true)
   }
   
   func itemDetailViewController(
-    _ controller: AddItemViewController,
+    _ controller: ItemDetailViewController,
     didFinishAdding item: ChecklistItem
   ) {
-      //вставляем строку по указанному индексу
-      
-      let newRowIndex = checklist.items.count
-      checklist.items.append(item)
-      
-      let indexPath = IndexPath(row: newRowIndex, section: 0)
-      let indexPaths = [indexPath]
-      tableView.insertRows(at: indexPaths, with: .automatic)
-      navigationController?.popViewController(animated: true)
-    }
+    //вставляем строку по указанному индексу
+    
+    let newRowIndex = checklist.items.count
+    checklist.items.append(item)
+    
+    let indexPath = IndexPath(row: newRowIndex, section: 0)
+    let indexPaths = [indexPath]
+    tableView.insertRows(at: indexPaths, with: .automatic)
+    navigationController?.popViewController(animated: true)
+  }
   
   func itemDetailViewController(
-    _ controller: AddItemViewController,
+    _ controller: ItemDetailViewController,
     didFinishEditing item: ChecklistItem
   ) {
     if let index = checklist.items.firstIndex(of: item) { //узнаем под каким индексом находится редактируемый элемент в массиве
