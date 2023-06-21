@@ -20,11 +20,11 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    navigationController?.delegate = self//назначаем делегат
+    navigationController?.delegate = self
     
     let index = dataModel.indexOfSelectedChecklist
-    if index != -1 {
-      let checklist = dataModel.lists[index]//0,1,3......
+    if index >= 0 && index < dataModel.lists.count {
+      let checklist = dataModel.lists[index]
       performSegue(
         withIdentifier: "ShowChecklist",
         sender: checklist)
@@ -38,7 +38,7 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
   ) {
     if segue.identifier == "ShowChecklist" {
       let controller = segue.destination as! ChecklistViewController
-      controller.checklist = sender as? Checklist // отправитель имеет тип Any?
+      controller.checklist = sender as? Checklist
     } else if segue.identifier == "AddChecklist" {
       let controller = segue.destination as! ListDetailViewController
       controller.delegate = self
@@ -105,7 +105,7 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
       controller,
       animated: true)
   }
-
+  
   // MARK: - Navigation Controller Delegates
   func navigationController(
     _ navigationController: UINavigationController,
