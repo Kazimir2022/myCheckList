@@ -62,10 +62,7 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
     _ tableView: UITableView,
     cellForRowAt indexPath: IndexPath
   ) -> UITableViewCell {
-    //  let cell = tableView.dequeueReusableCell(
-    //  withIdentifier: cellIdentifier,
-    //     for: indexPath)
-    // Get cell
+   
     let cell: UITableViewCell!
     if let tmp = tableView.dequeueReusableCell(
       withIdentifier: cellIdentifier) {
@@ -79,8 +76,8 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
     let checklist = dataModel.lists[indexPath.row]
     cell.textLabel!.text = checklist.name
     cell.accessoryType = .detailDisclosureButton
-    
-    cell.detailTextLabel!.text = "\(checklist.countUncheckedItems()) Remaining"
+    let count = checklist.countUncheckedItems()
+    cell.detailTextLabel!.text = count == 0 ? "All Done" : "\(count) Remaining"
 
     return cell
   }
