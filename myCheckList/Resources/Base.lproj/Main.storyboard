@@ -225,6 +225,9 @@ FuKImg
                                                 <constraint firstItem="S5R-G2-aLJ" firstAttribute="leading" secondItem="vdQ-4z-9di" secondAttribute="leadingMargin" id="hof-Xs-Aq8"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="D0s-H2-y9L" kind="show" identifier="PickIcon" id="Za2-Xx-UYl"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -248,6 +251,7 @@ FuKImg
                     </navigationItem>
                     <connections>
                         <outlet property="doneBarButton" destination="ZMQ-ln-6hV" id="BDo-ze-Qw2"/>
+                        <outlet property="iconImage" destination="1i2-1k-K0J" id="to4-31-s2U"/>
                         <outlet property="textField" destination="yFB-Gh-rip" id="Q1v-bq-Dps"/>
                     </connections>
                 </tableViewController>
@@ -255,7 +259,7 @@ FuKImg
             </objects>
             <point key="canvasLocation" x="243.75" y="636.97183098591552"/>
         </scene>
-        <!--Icon Picker View Controller-->
+        <!--Choose Icon-->
         <scene sceneID="2Bc-kl-Fly">
             <objects>
                 <tableViewController id="D0s-H2-y9L" customClass="IconPickerViewController" customModule="myCheckList" customModuleProvider="target" sceneMemberID="viewController">
@@ -287,6 +291,7 @@ FuKImg
                             <outlet property="delegate" destination="D0s-H2-y9L" id="4Rg-IM-xy1"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Choose Icon" id="IXt-B7-liJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nd-lb-hez" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
