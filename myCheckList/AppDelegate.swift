@@ -8,12 +8,13 @@
 import UIKit
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
   
   
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     let center = UNUserNotificationCenter.current()
+    center.delegate = self
     center.requestAuthorization(options: [.alert, .sound]) {granted, error in
       if granted {
         print("We have permission")
@@ -51,6 +52,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
   }
   
+  // MARK: - User Notification Delegates
+  func userNotificationCenter(
+    _ center: UNUserNotificationCenter,
+    willPresent notification: UNNotification,
+    withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
+  ) {
+    print("Received local notification \(notification)")
+  }
   
 }
 
