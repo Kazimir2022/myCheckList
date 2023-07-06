@@ -15,26 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     let center = UNUserNotificationCenter.current()
     center.delegate = self
-    center.requestAuthorization(options: [.alert, .sound]) {granted, error in
-      if granted {
-        print("We have permission")
-      } else {
-        print("Permission denied")
-      }
-    }
-    let content = UNMutableNotificationContent()
-    content.title = "Hello!"
-    content.body = "I am a local notification"
-    content.sound = UNNotificationSound.default
-    
-    let trigger = UNTimeIntervalNotificationTrigger(
-      timeInterval: 10,
-      repeats: false)
-    let request = UNNotificationRequest(
-      identifier: "MyNotification",
-      content: content,
-      trigger: trigger)
-    center.add(request)
     return true
   }
   
@@ -58,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     willPresent notification: UNNotification,
     withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
   ) {
-    print("Received local notification \(notification)")
+ //   print("Received local notification \(notification)")
   }
   
 }
