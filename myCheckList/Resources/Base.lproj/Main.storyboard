@@ -205,7 +205,7 @@ FuKImg
                                 <action selector="cancel" destination="xYa-30-CUd" id="6l3-9K-rtG"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="slU-ai-Afz">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="slU-ai-Afz">
                             <connections>
                                 <action selector="done" destination="xYa-30-CUd" id="rhx-DI-SZl"/>
                             </connections>
