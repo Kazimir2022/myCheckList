@@ -180,6 +180,7 @@ FuKImg
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="216" id="EkH-aE-hXQ"/>
                                                     </constraints>
+                                                    <locale key="locale" localeIdentifier="ru_BY"/>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
