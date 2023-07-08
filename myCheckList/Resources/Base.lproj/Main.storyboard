@@ -145,6 +145,9 @@ FuKImg
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6q8-bk-MZg">
                                                     <rect key="frame" x="255" y="6" width="51" height="31.5"/>
                                                     <color key="onTintColor" red="0.015686274510000001" green="0.66274509800000003" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <connections>
+                                                        <action selector="shouldRemindToggled:" destination="xYa-30-CUd" eventType="valueChanged" id="fMj-OQ-54O"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>

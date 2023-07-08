@@ -77,6 +77,17 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     }
   }
   
+  @IBAction func shouldRemindToggled(_ switchControl: UISwitch) {
+    textField.resignFirstResponder()
+
+    if switchControl.isOn {
+      let center = UNUserNotificationCenter.current()
+      center.requestAuthorization(options: [.alert, .sound]) {_, _ in
+        // do nothing
+      }
+    }
+  }
+  
   override func tableView(
     _ tableView: UITableView,
     willSelectRowAt indexPath: IndexPath
