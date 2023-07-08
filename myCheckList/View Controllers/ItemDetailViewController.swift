@@ -24,6 +24,8 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
   weak var delegate: AddItemViewControllerDelegate?
   @IBOutlet weak var doneBarButton: UIBarButtonItem!
   @IBOutlet weak var textField: UITextField!
+  @IBOutlet weak var shouldRemindSwitch: UISwitch!
+  @IBOutlet weak var datePicker: UIDatePicker!
   
   var itemToEdit: ChecklistItem?
   
@@ -32,12 +34,13 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     super.viewDidLoad()
     
     navigationItem.largeTitleDisplayMode = .never
-    //variable shadowing — you create a "shadow" instance of the itemToEdit variable
-    // создаем теневой экземпляр для блока if
-    if let itemToEdit = itemToEdit {
+   
+    if let item = itemToEdit {
       title = "Edit Item"
-      textField.text = itemToEdit.text
+      textField.text = item.text
       doneBarButton.isEnabled = true
+      shouldRemindSwitch.isOn = item.shouldRemind
+      datePicker.date = item.dueDate
     }
     
   }

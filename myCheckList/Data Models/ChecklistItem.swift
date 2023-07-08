@@ -6,8 +6,6 @@
 //
 
 
-
-
 //MARK: make a new object
 import Foundation
 class ChecklistItem: NSObject, Codable {
